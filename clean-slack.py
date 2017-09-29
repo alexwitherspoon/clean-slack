@@ -39,11 +39,13 @@ def list_messages(channel_ids):
     response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
     messages = json.loads(response)['messages']
     messages_ids = [f['ts'] for f in messages]
-    print channel_id, messages_ids
+    for messages_id in messages_ids:
+        print channel_id, messages_id
+        #delete_messages(channel_id, message_ids) 
 
 # delete messages that match criterea
 #TODO
-def delete_messages(message_ids):
+def delete_messages(channel_id, message_ids):
   count = 0
   num_messages = len(message_ids)
   for message_id in message_ids:
