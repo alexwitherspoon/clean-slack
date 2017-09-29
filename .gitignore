@@ -102,3 +102,4 @@ ENV/
 
 #config file
 clean-slack.conf
+clean-slack-channel.conf
