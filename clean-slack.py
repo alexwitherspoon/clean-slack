@@ -37,7 +37,6 @@ def list_messages(channel_ids):
     messages = json.loads(response)['messages']
     messages_ids = [f['ts'] for f in messages]
     for message_id in messages_ids:
-        #print channel_id, messages_id
         delete_messages(channel_id, message_id) 
 
 # delete messages that match criterea
@@ -50,7 +49,7 @@ def delete_messages(channel_id, message_id):
   }
   uri = 'https://slack.com/api/chat.delete'
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
-  print channel_id, message_id, json.loads(response)['ok']
+  print 'Deleting', channel_id, message_id, json.loads(response)['ok']
 
 # find list of files
 def list_files():
@@ -79,7 +78,6 @@ def delete_files(file_ids):
     print count, "of", num_files, "-", file_id, json.loads(response)['ok']
 
 # manage Messages
-# TODO
 channels = list_channels()
 channel_ids = [f['id'] for f in channels]
 list_messages(channel_ids)
