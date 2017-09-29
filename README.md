@@ -17,7 +17,7 @@ git clone https://github.com/alexwitherspoon/clean-slack.git
 
 Install via crontab -e
 ```shell
-* * * * * cd /opt/clean-slack && git stash && git pull && chmod +x /opt/clean-slack/clean-slack.py && /opt/clean-slack/clean-slack.py
+*/15 * * * * cd /opt/clean-slack && git stash && git pull && chmod +x /opt/clean-slack/clean-slack.py && python /opt/clean-slack/clean-slack.py
 ```
 
 # OR Run via Docker
