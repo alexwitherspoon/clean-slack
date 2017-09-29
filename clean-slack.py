@@ -21,7 +21,6 @@ def list_channels():
   }
   uri = 'https://slack.com/api/channels.list'
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
-  print json.loads(response)['channels']
   return json.loads(response)['channels']
 
 # find list of messages in channels
@@ -84,6 +83,7 @@ def delete_files(file_ids):
 # TODO
 channels = list_channels()
 channel_ids = [f['id'] for f in channels]
+print channel_ids
 #messages = [for channel_id in channel_ids:
 #    list_messages(channel_id)]
 #messages_ids = [f['channel','ts'] for f in messages]
