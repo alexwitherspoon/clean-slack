@@ -39,7 +39,7 @@ def list_messages(channel_ids):
     response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
     messages = json.loads(response)['messages']
     messages_ids = [f['ts'] for f in messages]
-    print messages_ids
+    print channel_id, messages_ids
 
 # delete messages that match criterea
 #TODO
