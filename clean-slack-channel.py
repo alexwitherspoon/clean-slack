@@ -31,7 +31,7 @@ def list_messages(channel):
   messages = json.loads(response)['messages']
   messages_ids = [f['ts'] for f in messages]
   for message_id in messages_ids:
-    delete_messages(channel_id, message_id) 
+    delete_messages(channel, message_id) 
 
 # delete messages that match criterea
 def delete_messages(channel_id, message_id):
