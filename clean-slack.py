@@ -35,7 +35,7 @@ def list_messages(channel_ids):
   }
   uri = 'https://slack.com/api/channels.history'
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
-  print json.loads(response)['ok']
+  print json.loads(response)['messages']
   return json.loads(response)['messages']
 
 # delete messages that match criterea
@@ -83,7 +83,10 @@ def delete_files(file_ids):
 # manage Messages
 # TODO
 channels = list_channels()
-list_messages([f['id'] for f in channels])
+channel_ids = [f['id'] for f in channels]
+print channel_ids
+#for id in channel_ids:
+#    list_messages(channel_id)
 #delete_messages(message_ids)
 
 # Manage Files
