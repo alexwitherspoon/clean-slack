@@ -22,7 +22,7 @@ def list_channels():
   }
   uri = 'https://slack.com/api/channels.list'
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
-  print json.loads(response)['channels']
+  print json.loads(response)
   return json.loads(response)['channels']
 
 # find list of messages in channels
@@ -36,7 +36,7 @@ def list_messages(channel_ids):
   }
   uri = 'https://slack.com/api/channels.history'
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
-  print json.loads(response)['messages']
+  print json.loads(response)['ok']
   return json.loads(response)['messages']
 
 # delete messages that match criterea
