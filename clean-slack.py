@@ -24,7 +24,7 @@ def list_channels():
   return json.loads(response)['channels']
 
 # find list of messages in channels
-def list_messages(channel_ids):
+def del_messages(channel_ids):
   for channel_id in channel_ids:
     params = {
       'token': token,
@@ -38,23 +38,14 @@ def list_messages(channel_ids):
     messages_ids = [f['ts'] for f in messages]
     for messages_id in messages_ids:
         #print channel_id, messages_id
-        delete_messages(channel_id, message_id) 
-
-# delete messages that match criterea
-#TODO
-def delete_messages(channel_id, message_ids):
-  count = 0
-  num_messages = len(message_ids)
-  for message_id in message_ids:
-    count = count + 1
-    params = {
-      'token': token,
-      'channel': channel_id,
-      'ts': message_id
-      }
-    uri = 'https://slack.com/api/chat.delete'
-    response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
-    print count, "of", num_messages, "-", channel_id, message_id, json.loads(response)['ok']
+        params = {
+          'token': token,
+          'channel': channel_id,
+          'ts': message_id
+        }
+        uri = 'https://slack.com/api/chat.delete'
+        response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
+        print count, "of", num_messages, "-", channel_id, message_id, json.loads(response)['ok']
 
 # find list of files
 def list_files():
@@ -86,7 +77,7 @@ def delete_files(file_ids):
 # TODO
 channels = list_channels()
 channel_ids = [f['id'] for f in channels]
-list_messages(channel_ids)
+del_messages(channel_ids)
 
 # Manage Files
 files = list_files()
