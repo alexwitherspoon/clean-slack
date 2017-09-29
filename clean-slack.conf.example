@@ -1,7 +1,6 @@
-// clean-slack.conf.example
 {
   "DEFAULT": {
     "TOKEN": "secret-key-of-myapp",
-    "DAYS": "60",
+    "DAYS": "60"
   }
 }
