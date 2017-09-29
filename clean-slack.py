@@ -35,8 +35,8 @@ def list_messages(channel_ids):
   }
   uri = 'https://slack.com/api/channels.history'
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
-  print json.loads(response)['channel_id'. 'ts']
-  return json.loads(response)['channel_id'. 'ts']
+  print json.loads(response)['channel_id', 'ts']
+  return json.loads(response)['channel_id', 'ts']
 
 # delete messages that match criterea
 #TODO
