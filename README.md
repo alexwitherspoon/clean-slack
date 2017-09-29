@@ -39,7 +39,7 @@ Include the following at the top of your project.
 
 Follow these instructions here: https://github.com/alexwitherspoon/clean-slack/blob/master/clean-slack.conf.example
 
-The file to edit is at:
+The file inside the container to edit is at:
 
     /opt/clean-slack/clean-slack.conf
 
