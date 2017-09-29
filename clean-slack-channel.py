@@ -19,7 +19,7 @@ ts_to = int(time.time()) - days * 24 * 60 * 60
 def list_messages(channel):
   params = {
     'token': token,
-    'channel': channel_id,
+    'channel': channel,
     'latest': ts_to,
     'oldest': 1
   }
