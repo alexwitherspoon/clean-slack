@@ -63,6 +63,7 @@ def list_files():
   }
   uri = 'https://slack.com/api/files.list'
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
+  print json.loads(response)['files']
   return json.loads(response)['files']
 
 # delete files that match criterea
@@ -81,9 +82,9 @@ def delete_files(file_ids):
 
 # manage Messages
 # TODO
-channels = list_channels()
-message_ids = [f['id'] for f in channels]
-delete_messages(message_ids)
+#channels = list_channels()
+#message_ids = [f['id'] for f in channels]
+#delete_messages(message_ids)
 
 # Manage Files
 files = list_files()
