@@ -1,1 +1,1 @@
-0 * * * * /opt/clean-slack/clean-slack.py
+*/15 * * * * cd /opt/clean-slack/ && python /opt/clean-slack/clean-slack.py
