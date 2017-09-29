@@ -84,8 +84,8 @@ def delete_files(file_ids):
 # TODO
 channels = list_channels()
 channel_ids = [f['id'] for f in channels]
-messages = [for channel_id in channel_ids:
-    list_messages(channel_id)]
+#messages = [for channel_id in channel_ids:
+#    list_messages(channel_id)]
 messages_ids = [f['channel','ts'] for f in messages]
 print messages_ids
 #delete_messages(message_ids)
