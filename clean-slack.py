@@ -15,14 +15,13 @@ days = config['DEFAULT']['DAYS'] # delete files older than this
 ts_to = int(time.time()) - days * 24 * 60 * 60
 
 # find list of channels
-#TODO
 def list_channels():
   params = {
     'token': token
   }
   uri = 'https://slack.com/api/channels.list'
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
-  print json.loads(response)
+  #print json.loads(response)['channels']
   return json.loads(response)['channels']
 
 # find list of messages in channels
@@ -41,7 +40,7 @@ def list_messages(channel_ids):
 
 # delete messages that match criterea
 #TODO
-def delete_messages(message_ids):
+def delete_messages(channel):
   count = 0
   num_messages = len(message_ids)
   for message_id in message_ids:
@@ -84,8 +83,7 @@ def delete_files(file_ids):
 # manage Messages
 # TODO
 channels = list_channels()
-channel_ids = [f['id'] for f in channels]
-list_messages(channel_ids)
+list_messages([f['id'] for f in channels])
 #delete_messages(message_ids)
 
 # Manage Files
