@@ -21,8 +21,8 @@ def list_channels():
   }
   uri = 'https://slack.com/api/channels.list'
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
-  print json.loads(response)['channels']
-  return json.loads(response)['channels']
+  print json.loads(response)['id']
+  return json.loads(response)['id']
 
 # find list of messages in channels
 #TODO
