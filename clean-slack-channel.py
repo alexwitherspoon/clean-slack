@@ -26,6 +26,9 @@ def list_messages(channel_ids):
     }
     uri = 'https://slack.com/api/channels.history'
     response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
+    print response
+    print 'ECHO'
+    print json.loads(response)['messages']
     messages = json.loads(response)['messages']
     messages_ids = [f['ts'] for f in messages]
     for message_id in messages_ids:
