@@ -41,8 +41,8 @@ def list_messages(channel_ids):
         delete_messages(channel_id, message_id) 
 
 # delete messages that match criterea
-#TODO
 def delete_messages(channel_id, message_id):
+  time.sleep(5)
   params = {
     'token': token,
     'channel': channel_id,
