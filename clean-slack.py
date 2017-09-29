@@ -86,6 +86,8 @@ channels = list_channels()
 channel_ids = [f['id'] for f in channels]
 for channel_id in channel_ids:
     list_messages(channel_id)
+messages_ids = [f['id'] for f in messages]
+print 
 #delete_messages(message_ids)
 
 # Manage Files
