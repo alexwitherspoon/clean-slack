@@ -27,10 +27,11 @@ def list_channels():
 
 # find list of messages in channels
 #TODO
-def list_messages():
+def list_messages(channel_ids):
   params = {
     'token': token,
-    'channel': ts_to,
+    'channel': channel_ids,
+    'latest': ts_to,
     'oldest': 1
   }
   uri = 'https://slack.com/api/channels.history'
@@ -83,7 +84,8 @@ def delete_files(file_ids):
 # manage Messages
 # TODO
 channels = list_channels()
-#message_ids = [f['id'] for f in channels]
+message_ids = [f['id'] for f in channels]
+print message_ids
 #delete_messages(message_ids)
 
 # Manage Files
