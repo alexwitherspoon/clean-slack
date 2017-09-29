@@ -3,12 +3,18 @@ import urllib2
 import time
 import json
 
-token = ''
 
-#Delete files older than this:
-days = 60
+# load the configuration file
+#TODO
+
+# set configuration Parameters
+token = '' # API TOken for Slack
+days = 60 # delete files older than this:
+
+
 ts_to = int(time.time()) - days * 24 * 60 * 60
 
+# find list of files
 def list_files():
   params = {
     'token': token,
@@ -19,6 +25,7 @@ def list_files():
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
   return json.loads(response)['files']
 
+# delete files that match criterea
 def delete_files(file_ids):
   count = 0
   num_files = len(file_ids)
