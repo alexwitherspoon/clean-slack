@@ -23,5 +23,4 @@ RUN echo "Installing clean-slack app" && \
     echo "...."
 
 # Commands to Run App
-CMD bash -c "cron" && \
-bash -c "sleep 1d"
+CMD bash -c "cron"
