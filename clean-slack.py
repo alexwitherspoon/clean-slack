@@ -40,7 +40,7 @@ def list_messages(channel_ids):
 
 # delete messages that match criterea
 #TODO
-def delete_messages(channel):
+def delete_messages(message_ids):
   count = 0
   num_messages = len(message_ids)
   for message_id in message_ids:
@@ -86,8 +86,8 @@ channels = list_channels()
 channel_ids = [f['id'] for f in channels]
 for channel_id in channel_ids:
     list_messages(channel_id)
-messages_ids = [f['id'] for f in messages]
-print 
+messages_ids = [f['channel','ts'] for f in messages]
+print messages_ids
 #delete_messages(message_ids)
 
 # Manage Files
