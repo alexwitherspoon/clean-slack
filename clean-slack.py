@@ -26,16 +26,20 @@ def list_channels():
 # find list of messages in channels
 #TODO
 def list_messages(channel_ids):
-  params = {
-    'token': token,
-    'channel': channel_ids,
-    'latest': ts_to,
-    'oldest': 1
-  }
-  uri = 'https://slack.com/api/channels.history'
-  response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
-  messages = json.loads(response)['ok']
-  print messages
+  count = 0
+  num_channels = len(channel_ids)
+  for channel_id in channel_ids:
+    count = count + 1
+    params = {
+      'token': token,
+      'channel': channel_id,
+      'latest': ts_to,
+      'oldest': 1
+    }
+    uri = 'https://slack.com/api/channels.history'
+    response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
+    messages = json.loads(response)['ok']
+    print messages
 
 # delete messages that match criterea
 #TODO
