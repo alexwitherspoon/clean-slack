@@ -37,6 +37,7 @@ def del_messages(channel_ids):
     messages = json.loads(response)['messages']
     messages_ids = [f['ts'] for f in messages]
     for messages_id in messages_ids:
+<<<<<<< HEAD
         #print channel_id, messages_id
         params = {
           'token': token,
@@ -46,6 +47,26 @@ def del_messages(channel_ids):
         uri = 'https://slack.com/api/chat.delete'
         response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
         print count, "of", num_messages, "-", channel_id, message_id, json.loads(response)['ok']
+=======
+        print channel_id, messages_id
+        #delete_messages(channel_id, message_id) 
+
+# delete messages that match criterea
+#TODO
+def delete_messages(channel_id, message_ids):
+  count = 0
+  num_messages = len(message_ids)
+  for message_id in message_ids:
+    count = count + 1
+    params = {
+      'token': token,
+      'channel': channel_id,
+      'ts': message_id
+      }
+    uri = 'https://slack.com/api/chat.delete'
+    response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
+    print count, "of", num_messages, "-", channel_id, message_id, json.loads(response)['ok']
+>>>>>>> parent of 91b78d2... Update clean-slack.py
 
 # find list of files
 def list_files():
