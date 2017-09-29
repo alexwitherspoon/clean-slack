@@ -5,11 +5,11 @@ import json
 
 
 # load the configuration file
-#TODO
+with open('clean-slack.conf', 'r') as f:
+    config = json.load(f)
 
-# set configuration Parameters
-token = '' # API TOken for Slack
-days = 60 # delete files older than this:
+token = config['DEFAULT']['TOKEN'] # API Token for Slack
+days = config['DEFAULT']['DAYS'] # delete files older than this
 
 
 ts_to = int(time.time()) - days * 24 * 60 * 60
