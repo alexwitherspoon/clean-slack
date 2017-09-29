@@ -34,6 +34,14 @@ Install via crontab -e
 Include the following at the top of your project.
 
     FROM alexwitherspoon:clean-slack
+    
+## Configure it!
+
+Follow these instructions here: https://github.com/alexwitherspoon/clean-slack/blob/master/clean-slack.conf.example
+
+The file to edit is at:
+
+    /opt/clean-slack/clean-slack.conf
 
 ## Run this image on a docker host
 
@@ -47,13 +55,6 @@ Docker exec.
 
     docker exec -i -t clean-slack env TERM=xterm bash -l
 
-## Configure it!
-
-Follow these instructions here: https://github.com/alexwitherspoon/clean-slack/blob/master/clean-slack.conf.example
-
-The file to edit is at:
-
-    /opt/clean-slack/clean-slack.conf
 
 ## Things got out of hand, how do I kill it?
 
