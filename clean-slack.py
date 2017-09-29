@@ -82,7 +82,7 @@ def delete_files(file_ids):
 
 # manage Messages
 # TODO
-#channels = list_channels()
+channels = list_channels()
 #message_ids = [f['id'] for f in channels]
 #delete_messages(message_ids)
 
