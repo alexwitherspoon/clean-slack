@@ -1,2 +1,2 @@
-*/10 * * * * cd /opt/clean-slack/ && python /opt/clean-slack/clean-slack.py
-*/6 * * * * cd /opt/clean-slack/ && python /opt/clean-slack/clean-slack-channel.py
+*/2 * * * * cd /opt/clean-slack/ && python /opt/clean-slack/clean-slack.py
+*/3 * * * * cd /opt/clean-slack/ && python /opt/clean-slack/clean-slack-channel.py
