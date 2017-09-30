@@ -21,7 +21,7 @@ def list_messages(channel):
     'token': token,
     'channel': channel,
     'latest': ts_to,
-    'oldest': 1
+    'count': 1000
   }
   uri = 'https://slack.com/api/channels.history'
   response = urllib2.urlopen(uri + '?' + urllib.urlencode(params)).read()
