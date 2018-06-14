@@ -1,6 +1,6 @@
 # clean-slack
 # https://github.com/alexwitherspoon/clean-slack
-FROM alexwitherspoon/debian
+FROM debian:stable
 
 MAINTAINER Alex Witherspoon <alex@alexwitherspoon.com>
 
