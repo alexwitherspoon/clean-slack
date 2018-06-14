@@ -1,7 +1,6 @@
 # clean-slack
 python script/docker to clean Slack Files
 
-* [![](https://images.microbadger.com/badges/image/alexwitherspoon/clean-slack.svg)](https://microbadger.com/images/alexwitherspoon/clean-slack "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/alexwitherspoon/clean-slack.svg)](https://microbadger.com/images/alexwitherspoon/clean-slack "Get your own version badge on microbadger.com")
 * Github repo: [alexwitherspoon/clean-slack](https://github.com/alexwitherspoon/clean-slack)
 * Dockerhub repo: [alexwitherspoon/clean-slack](https://hub.docker.com/r/alexwitherspoon/clean-slack/)
 
