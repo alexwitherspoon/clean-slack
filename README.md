@@ -24,7 +24,7 @@ Install via crontab -e
 ## How to use this image
 
 ### Bundled Apps
-* Debian 8
+* Debian Stable
 * curl
 * python
 
